@@ -1,0 +1,23 @@
+{
+    "name": "rasppod",
+    "version": "0.1.10",
+    "author": "LIVEN",
+    "license": "Apache-2.0",
+    "description": "RaspPod app",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder build --win --publish never",
+        "deploy": "electron-builder build --win --publish always"
+    },
+    "devDependencies": {
+        "electron": "^12.0.2",
+        "electron-builder": "^22.10.5"
+    },
+    "build": {
+        "productName": "RaspPod",
+        "win": {
+            "icon": "./src/assets/icon.ico"
+        }
+    }
+}

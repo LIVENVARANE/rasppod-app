@@ -1,0 +1,155 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-family: 'SFProDisplay';
+    user-select: none;
+}
+
+:root {
+    --defaultBackground: rgb(238, 238, 238);
+}
+
+.background {
+    background: url(../assets/background.jpg);
+    background-size: cover;
+    filter: blur(2px);
+    min-width: calc(100% + 10px);
+    min-height: calc(100% + 10px);
+    position: fixed;
+    transform: scaleX(-1);
+    top: -5px;
+    left: -5px;
+}
+
+.time {
+    font-weight: bolder;
+    font-size: 120pt;
+    text-shadow: rgb(100 100 111 / 6%) 0px 0px 15px;
+    margin: 0px;
+    display: inline;
+    position: absolute;
+    top: 12%;
+    left: 100px;
+    width: 420px;
+    text-align: right;
+}
+
+.time .anim {
+    opacity: 1;
+    animation: time-dot 3s ease infinite;
+}
+
+@keyframes time-dot {
+    10% { opacity: 1; }
+    50% { opacity: 0.2; }
+    90% { opacity: 1; }
+}
+
+#date {
+    position: absolute;
+    top: 220px;
+    left: 550px;
+    letter-spacing: 1px;
+}
+
+.infos {
+    display: inline-block;
+    height: 20px;
+    position: absolute;
+    top: calc(12% + 85.5px);
+    right: 100px;
+}
+
+.infos img {
+    height: 100%;
+    margin: 0px 5px;
+}
+
+.slider {
+    height: 50%;
+    width: calc(100% - 80px);
+    position: absolute;
+    top: calc(12% + 211px);
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding-left: 80px;
+}
+
+.slider div {
+    display: inline-block;
+    width: 450px;
+    height: 60%;
+    background-color: rgba(128, 128, 128, 70%);
+    position: relative;
+    margin: 0px 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    position: relative;
+    top: 20%;
+    vertical-align: top;
+    transition: 0.2s cubic-bezier(0.21, 0.01, 0.2, 0.97);
+}
+
+.slider div.selected {
+    width: 600px;
+    height: 80%;
+    top: 10%;
+    margin-left: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.slider div.previous {
+    margin-left: -483px;
+}
+
+.slider div.hidden {
+    position: relative;
+    right: 480px;
+}
+
+.slider img {
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#subtext {
+    position: absolute;
+    left: 100px;
+    top: calc(50% + 310px);
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.87);
+    transition: 0.1s ease opacity;
+}
+
+#app-animation {
+    position: fixed;
+    width: calc(100% - 160px);
+    height: calc(100% - 160px);
+    background-color: white;
+    top: 80px;
+    left: 80px;
+    opacity: 0;
+    z-index: 1;
+    transition: 0.5s ease;
+}
+
+#app-animation.triggered {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    transition: 0.3s cubic-bezier(0.49, 0.01, 0, 1.01);
+}
+
+#app-animation img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    transform: translateX(-50%) translateY(-50%);
+}

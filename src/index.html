@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <title>RaspPod UI</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/apps.css" />
+        <link rel="stylesheet" href="css/fonts.css" />
+        <script src="main.js"></script>
+    </head>
+    <body state="home" substate>
+        <img class="background" src="assets/background.jpg" />
+        <h1 class="time"><span id="time-hours">__</span><span class="anim">:</span><span id="time-minutes">__</span></h1>
+        <h2 id="date">Loading...</h2>
+        <div class="infos">
+            <img src="assets/volume-full.png" id="infos-volume" />
+            <img src="assets/wifi-full.png" id="infos-connectivity" />
+        </div>
+        <div class="slider">
+            <div class="app selected" app="YouTube" local="false" color="red" style="background-color: #ff0000b3;" align="center">
+                <img src="assets/apps/youtube.png" />
+            </div>
+            <div class="app" app="Apple Music" local="false" color="#fc3c44" style="background: linear-gradient(45deg, #fc3c44b3, #f94c57b3);" align="center">
+                <img src="assets/apps/music.png" />
+            </div>
+            <div class="app" app="Twitch" local="false" color="#6441a5" style="background: #6441a5b3;" align="center">
+                <img src="assets/apps/twicth.png" />
+            </div>
+            <div class="app" app="Amazon Prime Video" local="false" color="#00A8E1" style="background: linear-gradient(45deg, #00A8E1B3, #232F3EB3);" align="center">
+                <img src="assets/apps/primevideo.png" />
+            </div>
+            <div class="app" app="iTunes Remote" local="true" color="#006EE2" style="background: linear-gradient(45deg, #006EE2B3, #66AFFEB3);" align="center">
+                <img src="assets/apps/remote.png" />
+            </div>
+            <div class="app" app="Clock" local="true" color="#17cff6" style="background: linear-gradient(45deg, #17cff6b3, #406aafb3);" align="center">
+                <img src="assets/apps/clock.png" />
+            </div>
+            <div class="app" app="Web Browser" local="false " color="#e87143" style="background: linear-gradient(45deg, #e87143b3, #bc5959b3);" align="center">
+                <img src="assets/apps/web.png" />
+            </div>
+            <div class="app" color="gray" app="Settings" local="true" align="center">
+                <img src="assets/apps/settings.png"/>
+            </div>
+        </div>
+        <h2 id="subtext">Open the YouTube app</h2>
+        <div id="app-animation">
+            <img id="app-animation-img" />
+        </div>
+
+        <div class="apps">
+            <div id="settings-app">
+                <div class="settings-main" parent="none">
+                    <h1>Settings</h1>
+                    <div type="link" linkdest="settings-general">
+                        <img src="assets/apps/settings/general.png" class="icon" />
+                        <h3>General</h3>
+                        <span>General settings</span>
+                        <img src="assets/arrow_right.svg" class="arrow" />
+                    </div>
+                    <div type="link" linkdest="settings-connectivity">
+                        <img src="assets/apps/settings/connectivity.png" class="icon" />
+                        <h3>Connectivity</h3>
+                        <span>Manage Wi-Fi, Bluetooth settings...</span>
+                        <img src="assets/arrow_right.svg" class="arrow" />
+                    </div>
+                    <div type="link" linkdest="settings-power">
+                        <img src="assets/apps/settings/power.png" class="icon" />
+                        <h3>Power Options</h3>
+                        <span>Shutdown, Restart, Sleep...</span>
+                        <img src="assets/arrow_right.svg" class="arrow" />
+                    </div>
+                </div>
+                <div class="settings-connectivity" parent="settings-main" style="opacity: 0; z-index: -1;">
+                    <h1>Connectivity Settings</h1>
+                    <div type="disabled" class="disabled">
+                        <img src="assets/apps/settings/wifi.png" class="icon" />
+                        <h3>Wi-Fi</h3>
+                        <span>Manage Wi-Fi networks</span>
+                        <img src="assets/arrow_right.svg" class="arrow" />
+                    </div>
+                    <div type="disabled" class="disabled">
+                        <img src="assets/apps/settings/bluetooth.png" class="icon" />
+                        <h3>Bluetooth</h3>
+                        <span>Connect to a Bluetooth speaker</span>
+                        <img src="assets/arrow_right.svg" class="arrow" />
+                    </div>
+                </div>
+                <div class="settings-general" parent="settings-main" style="opacity: 0; z-index: -1;">
+                    <h1>General</h1>
+                </div>
+                <div class="settings-power" parent="settings-main" style="opacity: 0; z-index: -1;">
+                    <h1>Power Options</h1>
+                    <div type="action">
+                        <img src="assets/apps/settings/power.png" class="icon" />
+                        <h3>Shutdown</h3>
+                        <span>Shutdown device</span>
+                        <img src="assets/arrow_right.svg" class="arrow" />
+                    </div>
+                    <div type="action">
+                        <img src="assets/apps/settings/restart.png" class="icon" />
+                        <h3>Restart</h3>
+                        <span>Restart device</span>
+                        <img src="assets/arrow_right.svg" class="arrow" />
+                    </div>
+                    <div type="action">
+                        <img src="assets/apps/settings/sleep.png" class="icon" />
+                        <h3>Sleep</h3>
+                        <span>Put device in sleep mode to save energy</span>
+                        <img src="assets/arrow_right.svg" class="arrow" />
+                    </div>
+                </div>
+            </div>
+            <div id="itunes-remote-app">
+                <img src="assets/apps/remote.png" />
+                <h1>iTunes Remote is not done yet, check back later.</h1>
+            </div>
+        </div>
+    </body>
+</html>
